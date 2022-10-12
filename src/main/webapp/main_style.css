@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+}
+/*超文本格式*/
+a {
+    text-decoration-line: none;
+    color: #ffffff;
+}
+/*容器格式*/
+.login_container {
+    height: 100%;
+    background-image: linear-gradient(to right, #43C6AC, #191654);
+
+}
+.register_container {
+    height: 100%;
+    background-image: linear-gradient(to right, #30E8BF, #FF8235);
+}
+/*中间方框整体*/
+.wrapper {
+    background-color: #fff;
+    width: 358px;
+    height: 588px;
+    border-radius: 15px;
+    padding: 0 50px;
+    position: relative;
+    left: 25%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.img_decorate{
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+/*页面大标题*/
+.header {
+    font-size: 38px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 150px;
+}
+/*输入框格式*/
+.input-item {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    border: 0;
+    padding: 5px;
+    border-bottom: 1px solid rgb(128, 125, 125);
+    font-size: 15px;
+    outline: none;
+}
+.input-item::placeholder {
+    text-transform: uppercase;
+}
+/*跳转键格式*/
+.btn {
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    margin-top: 20px;
+    background-image: linear-gradient(to right, #fc354c, #0abfbc);
+    color: #fff;
+    border-style: hidden;
+    cursor:pointer;
+}
+/*辅助信息*/
+.msg {
+    text-align: center;
+    line-height: 88px;
+}
+

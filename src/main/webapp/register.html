@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh_n">
+<head>
+    <meta charset="UTF-8">
+    <title>注册界面</title>
+    <link rel="stylesheet" type="text/css" href="main_style.css">
+    <script type="text/javascript">
+        var a=true;
+        var b=true;
+        function Check_name(){
+            var username_value=document.getElementById("username").value;
+            if (username_value===""){
+                alert("用户名不能为空！");
+                return a=false;
+            }
+            if (username_value.length>8){
+                alert("用户名应小于8个字符！");
+                return a=false;
+            }
+            else{
+                return a=true;
+            }
+        }
+        function Check_password(){
+            var p1 =document.getElementById("password1");
+            var p2 =document.getElementById("password2");
+            if (p1.value!==p2.value){
+                alert("两次密码不一样请重新输入！");
+                return b=false;
+            }
+            else{
+                return b=true;
+            }
+        }
+        function click_register(){
+            a=Check_name();
+            b=Check_password();
+            if(a&&b){
+                location.href="login.html";
+            }
+        }
+        setInterval("document.getElementById('datetime').innerHTML=new Date().toLocaleString();", 1000);
+        var index=3;
+        setInterval(function(){
+            index++;
+            if (index>4){
+                index=3;
+            }
+            document.getElementById("auto_ad").src="images/"+index+".png";
+        },3000);
+    </script>
+</head>
+<body>
+        <div class="register_container">
+            <div class="wrapper" >
+                <div class="header">用户注册</div>
+                <form action="" align="left" >
+                    邮箱：<input id="mail" type='text' name="mail" class="input-item" placeholder="请输入邮箱">
+                    姓名：<input id="username" type='text' name="username" class="input-item" placeholder="请输入用户名！(用户名不能为空且小于8个字符)">
+                    密码：<input id="password1" type='password' name="user_pd1" class="input-item" placeholder="请输入密码！">
+                    请确认密码：<input id="password2" type='password' name="user_pd1" class="input-item"placeholder="请再次输入密码！">
+                    <div style="text-align: center">
+                        出生日期：<input type='date'><br><br>
+                        性别：<input type='radio' name="sex" value='male' checked>男<input type='radio' name="sex" value='female'>女
+                    </div>
+                    <div>
+                        <input type="button" class="btn" id="register" value="注册" onclick="click_register()">
+                    </div>
+                    <div id="datetime" style="text-align: center">
+                    </div>
+                </form>
+            </div>
+            <div class="img_decorate">
+                <img id="auto_ad" src="images/3.png" alt="自动轮换广告" width="300" height="600">
+            </div>
+
+        </div>
+</body>
+</html>
