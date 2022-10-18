@@ -14,15 +14,17 @@
 <%
     String p =request.getParameter("邮箱");
     String a =request.getParameter("密码");
-    if (p!=null&&a!=null)
-    {
+//    if (p!=null&&a!=null)
+//    {
         if (p.equals(a)) {
-//            out.println("欢迎");
-            response.sendRedirect("main.jsp?name="+p);
+            request.setAttribute("username",p);
+            session.setAttribute("Userid",p);
+            request.getRequestDispatcher("main.jsp?name="+p).forward(request,response);
         } else {
-            out.println("密码错误");
+//            out.println("密码错误");
+            response.sendRedirect("login.html");
         }
-    }
+//    }
 %>
 </body>
 </html>
