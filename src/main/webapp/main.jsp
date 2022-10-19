@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.math.BigInteger" %><%--
   Created by IntelliJ IDEA.
   User: 20601
   Date: 2022-10-11
@@ -36,8 +36,8 @@ out.println("<h1>欢迎:"+userid+"<h1>");
 </div>
 <%! int x=0;%>
 <%
-    Integer c = (Integer) application.getAttribute("number");
-    if (c == null) {
+    object c = (int) application.getAttribute("number");
+    if ((Integer)c == null) {
         c = 0;
     }
     if (session.isNew()) {
@@ -45,8 +45,19 @@ out.println("<h1>欢迎:"+userid+"<h1>");
         c++;
     }
     application.setAttribute("number", c.toString());
+    /*int number=0;
+    if(application.getAttribute("number")==null){
+        number=1;
+    }else{
+        if (session.isNew()) {
+            number = Integer.parseInt((String) application.getAttribute("number"));
+            number = number + 1;
+        }
+    }
+    out.println("您是第"+number+"位访问者！");
+    application.setAttribute("number",String.valueOf(number));*/
 %>
-您是第<%=x%>位访客！
-您是第<%=c%>位访客！
+<%--您是第<%=x%>位访客！--%>
+<%--您是第<%=c%>位访客！--%>
 </body>
 </html>
