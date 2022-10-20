@@ -13,9 +13,9 @@
 <body>
 <%
     String p =request.getParameter("email");
-    String a =request.getParameter("pass");
-//    if (p!=null&&a!=null)
-//    {
+    String a =request.getParameter("password");
+    if (p!=null&&a!=null)
+    {
         if (p.equals(a)) {
             request.setAttribute("username",p);
             session.setAttribute("Userid",p);
@@ -24,10 +24,10 @@
 //            out.println("密码错误");
             response.sendRedirect("login.html");
         }
-//    }
-//    else{
-//        out.println("出现错误");
-//    }
+    }
+    else{
+        out.println("出现错误");
+    }
 %>
 </body>
 </html>
