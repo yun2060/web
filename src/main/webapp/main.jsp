@@ -1,11 +1,11 @@
-<%@ page import="java.math.BigInteger" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: 20601
   Date: 2022-10-11
   Time: 11:02
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <title>主界面</title>
@@ -36,15 +36,15 @@ out.println("<h1>欢迎:"+userid+"<h1>");
 </div>
 <%! int x=0;%>
 <%
-    object c = (int) application.getAttribute("number");
-    if ((Integer)c == null) {
+    Integer c = (Integer) application.getAttribute("number");
+    if (c == null) {
         c = 0;
     }
     if (session.isNew()) {
         x++;
         c++;
     }
-    application.setAttribute("number", c.toString());
+    application.setAttribute("number", c);
     /*int number=0;
     if(application.getAttribute("number")==null){
         number=1;
@@ -57,7 +57,8 @@ out.println("<h1>欢迎:"+userid+"<h1>");
     out.println("您是第"+number+"位访问者！");
     application.setAttribute("number",String.valueOf(number));*/
 %>
-<%--您是第<%=x%>位访客！--%>
-<%--您是第<%=c%>位访客！--%>
+session:<%out.println(session.isNew());%>
+您是第<%= x %>位访客！
+您是第<%= c %>位访客！
 </body>
 </html>
